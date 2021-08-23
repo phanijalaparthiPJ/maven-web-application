@@ -95,18 +95,18 @@
 	</dependencies>
 	
 	<distributionManagement>
-	
+	   <!--
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
 	      <url>http://13.232.198.44:9652/phanitechnologies/repository/wallmart-release/</url>
 	    </repository>
-	    
-	   <!-- <snapshotRepository>
+	    -->
+	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
 	      <url>http://13.232.198.44:9652/phanitechnologies/repository/wallmart-snapshot/</url>
-	    </snapshotRepository>-->
+	    </snapshotRepository>
 	    
 	</distributionManagement>
 	
