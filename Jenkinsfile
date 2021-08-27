@@ -19,6 +19,7 @@ stage('Build')
 {
 sh "${mavenHome}/bin/mvn clean package"
 }
+ /*
 stage('SonarQubeReport')
 {
 sh "${mavenHome}/bin/mvn clean sonar:sonar"
@@ -43,3 +44,4 @@ phani jalaparthi,
 9652559975''', subject: 'Finished the Build..!!', to: 'phanchowdary1912@gmail.com'
 }	
 }
+*/
