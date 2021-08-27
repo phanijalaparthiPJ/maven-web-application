@@ -19,11 +19,11 @@ stage('Build')
 {
 sh "${mavenHome}/bin/mvn clean package"
 }
- /*
-stage('SonarQubeReport')
+ stage('SonarQubeReport')
 {
 sh "${mavenHome}/bin/mvn clean sonar:sonar"
 }
+/*
 stage('UploadArtifactReportIntoNexus')
 {
 sh "${mavenHome}/bin/mvn clean deploy"
@@ -34,6 +34,7 @@ sshagent(['fd7391ca-785d-4b44-aaef-004929bb9e66']) {
 sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.126.223.217:/opt/apache-tomcat-9.0.52/webapps/"
 }    
 }
+*/
 stage('EmailNotification')
 {
 emailext body: '''Build Finished...!!
@@ -44,4 +45,3 @@ phani jalaparthi,
 9652559975''', subject: 'Finished the Build..!!', to: 'phanchowdary1912@gmail.com'
 }	
 }
-*/
