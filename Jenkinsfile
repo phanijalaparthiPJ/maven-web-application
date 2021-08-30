@@ -1,20 +1,22 @@
 node
 {
 def mavenHome = tool name: "maven3.8.2"
-/*
-echo "GitHub BranhName ${env.BRANCH_NAME}"
+
+echo "GitHub BranchName ${env.BRANCH_NAME}"
 echo "Jenkins Job Number ${env.BUILD_NUMBER}"
 echo "Jenkins Node Name ${env.NODE_NAME}"
 
 echo "Jenkins Home ${env.JENKINS_HOME}"
 echo "Jenkins URL ${env.JENKINS_URL}"
 echo "JOB Name ${env.JOB_NAME}"
-*/
-options{
+
+options
+  {
   timestamps()
   buildDiscarder (logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
   }
-  triggers{
+  triggers
+  {
       //pollscm
       //pollSCM('* * * * *')
       //buildperiodically
@@ -49,11 +51,11 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@52
 */
 stage('EmailNotification')
 {
-emailext body: '''Build Finished...!!
+emailtext body: '''Build Finished...!!
 
 
 Regards,
 phani jalaparthi,
-9652559975''', subject: 'Finished the Build..!!', to: 'phanchowdary1912@gmail.com'
+9652559975''', subject: 'Finished the Build..!!', to: 'phanichowdary1912@gmail.com'
 }	
 }
