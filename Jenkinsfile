@@ -10,24 +10,16 @@ echo "Jenkins Home ${env.JENKINS_HOME}"
 echo "Jenkins URL ${env.JENKINS_URL}"
 echo "JOB Name ${env.JOB_NAME}"
 */
-options
-  {
-  timestamps()
-    /*
-  ([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: '']])  
-  */
-  }
-  
-  triggers
-  {
-      //pollscm
-      //pollSCM('* * * * *')
-      //buildperiodically
-      //cron('* * * * *')
-      //Github webhook
-      githubPush()
-      }
-  
+
+ properties([
+      buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], 
+      pipelineTriggers([
+      //cron('* * * * * '), 
+      //githubPush(), 
+      pollSCM('* * * * *')
+      ])
+      ])
+  timestams(){
 stage('checkoutocode')
 {
 git branch: 'development', credentialsId: 'bc8c0969-6bab-43f9-990d-9e4dd376ad45', 
@@ -63,4 +55,5 @@ phanijalaparthi,
 9652559975.
 ''', subject: 'Build over..!!', to: 'phanichowdary1912@gmail.com'
 }	
+}
 }
