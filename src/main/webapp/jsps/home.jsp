@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to Phani Software Solutions. GitHub WebHook Example--- by--- JPR</h1>
-<h1 align="center"> Welcome to PhaniTechnologies.......We have a demo on  DevOps Master Program on  30th january  2022  at 7 PM IST for new batch. , This is a weekdays batch  . PSS- Very Good Training center for DevOps with AWS in Maratha Halli and also for Job Assitance Job Support also...Teaching Real Time scnerios and use cases... Some fake guys are giving the fake reviews dont believe those guys..I am requesting everyone. Please give your reviews in FB and Google and subscribe youtube.</h1>
+<h1 align="center"> Welcome to PhaniTechnologies.......We have a demo on  DevOps Master Program on  27th january  2022  at 7 PM IST for new batch. , This is a weekdays batch  . PSS- Very Good Training center for DevOps with AWS in Maratha Halli and also for Job Assitance Job Support also...Teaching Real Time scnerios and use cases... Some fake guys are giving the fake reviews dont believe those guys..I am requesting everyone. Please give your reviews in FB and Google and subscribe youtube.</h1>
 <hr>
 <div style="text-align: center;">
 	<span>
