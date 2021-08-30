@@ -9,7 +9,18 @@ echo "Jenkins Home ${env.JENKINS_HOME}"
 echo "Jenkins URL ${env.JENKINS_URL}"
 echo "JOB Name ${env.JOB_NAME}"
 
-
+options{
+  timestamps()
+  buildDiscarder (logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
+  }
+  triggers{
+      //pollscm
+      //pollSCM('* * * * *')
+      //buildperiodically
+      //cron('* * * * *')
+      //Github webhook
+      githubPush()
+      }
 stage('checkoutocode')
 {
 git branch: 'development', credentialsId: 'bc8c0969-6bab-43f9-990d-9e4dd376ad45', 
