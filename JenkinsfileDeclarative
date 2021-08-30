@@ -1,0 +1,80 @@
+pipeline{
+agent any
+/*
+agent
+label "node name"
+*/
+tools{
+maven "maven3.8.2"
+}
+options{
+  timestamps()
+  buildDiscarder (logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
+  }
+  triggers{
+      //pollscm
+      pollSCM('* * * * *')
+      //buildperiodically
+      //cron('* * * * *')
+      //Github webhook
+      //githubPush()
+      }
+stages{
+stage('CheckOutCode')
+{
+steps{
+git branch: 'development', credentialsId: 'bc8c0969-6bab-43f9-990d-9e4dd376ad45', url: 'https://github.com/phanijalaparthiPJ/maven-web-application.git'
+}
+}
+stage('Build'){
+steps{
+sh "mvn clean package"
+}
+}
+stage('ExecuteSonarQubeReport'){
+    steps{
+        sh "mvn clean sonar:sonar"
+    }
+}
+stage('UploadArtifactreportinNexus'){
+    steps{
+        sh "mvn clean deploy"
+    }
+}
+    
+stage('DeployApplicationintoTomcat'){
+    steps{
+            sshagent(credentials: ['fd7391ca-785d-4b44-aaef-004929bb9e66'], ignoreMissing: true) {
+    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.233.152.108:/opt/apache-tomcat-9.0.52/webapps/"
+}
+    }
+}
+}//stage Closing
+post{
+    always{
+    emailext body: '''Build Finished...!!
+
+
+		Regards,
+		phani jalaparthi,
+		9652559975''', subject: 'Finished the Build..!!', to: 'phanichowdary1912@gmail.com'
+        
+    }
+    failure{
+    emailext body: '''Build Finished...failure!!
+
+
+		Regards,
+		phani jalaparthi,
+		9652559975''', subject: 'build failure..!!', to: 'phanichowdary1912@gmail.com'    
+    }
+    success{
+        emailext body: '''Build Finished...!!
+
+
+		Regards,
+		phani jalaparthi,
+		9652559975''', subject: 'Build success..!!', to: 'phanichowdary1912@gmail.com'
+    }
+}
+}//Pipeline Closing
