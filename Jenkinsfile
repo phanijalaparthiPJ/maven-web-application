@@ -24,7 +24,7 @@ options
       //Github webhook
       githubPush()
       }
-  */
+  
 stage('checkoutocode')
 {
 git branch: 'development', credentialsId: 'bc8c0969-6bab-43f9-990d-9e4dd376ad45', 
@@ -49,7 +49,7 @@ sshagent(['fd7391ca-785d-4b44-aaef-004929bb9e66']) {
 sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@52.66.239.174:/opt/apache-tomcat-9.0.52/webapps/"
 }    
 }
-*/
+
 stage('EmailNotification')
 {
 emailext body: '''Build over & build success..!
