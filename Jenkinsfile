@@ -9,12 +9,13 @@ echo "Jenkins Node Name ${env.NODE_NAME}"
 echo "Jenkins Home ${env.JENKINS_HOME}"
 echo "Jenkins URL ${env.JENKINS_URL}"
 echo "JOB Name ${env.JOB_NAME}"
-/*
+
 options
   {
   timestamps()
   buildDiscarder (logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
   }
+  /*
   triggers
   {
       //pollscm
