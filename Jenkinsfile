@@ -52,11 +52,13 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@52
 */
 stage('EmailNotification')
 {
-emailtext body: '''Build Finished...!!
+emailext body: '''Build over & build success..!
 
 
-Regards,
-phani jalaparthi,
-9652559975''', subject: 'Finished the Build..!!', to: 'phanichowdary1912@gmail.com'
+
+Regard,
+phanijalaparthi,
+9652559975.
+''', subject: 'Build over..!!', to: 'phanichowdary1912@gmail.com'
 }	
 }
