@@ -13,11 +13,11 @@ options{
   }
   triggers{
       //pollscm
-      pollSCM('* * * * *')
+      //pollSCM('* * * * *')
       //buildperiodically
       //cron('* * * * *')
       //Github webhook
-      //githubPush()
+      githubPush()
       }
 stages{
 stage('CheckOutCode')
