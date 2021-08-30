@@ -1,7 +1,7 @@
 node
 {
 def mavenHome = tool name: "maven3.8.2"
-
+/*
 echo "GitHub BranchName ${env.BRANCH_NAME}"
 echo "Jenkins Job Number ${env.BUILD_NUMBER}"
 echo "Jenkins Node Name ${env.NODE_NAME}"
@@ -9,7 +9,7 @@ echo "Jenkins Node Name ${env.NODE_NAME}"
 echo "Jenkins Home ${env.JENKINS_HOME}"
 echo "Jenkins URL ${env.JENKINS_URL}"
 echo "JOB Name ${env.JOB_NAME}"
-
+*/
 options
   {
   timestamps()
