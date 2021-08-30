@@ -24,7 +24,7 @@ options
       //Github webhook
       githubPush()
       }
-  
+  */
 stage('checkoutocode')
 {
 git branch: 'development', credentialsId: 'bc8c0969-6bab-43f9-990d-9e4dd376ad45', 
@@ -38,7 +38,6 @@ sh "${mavenHome}/bin/mvn clean package"
 {
 sh "${mavenHome}/bin/mvn clean sonar:sonar"
 }
-/*
 stage('UploadArtifactReportIntoNexus')
 {
 sh "${mavenHome}/bin/mvn clean deploy"
