@@ -19,7 +19,7 @@ echo "JOB Name ${env.JOB_NAME}"
       pollSCM('* * * * *')
       ])
       ])
-  timestams(){
+  timestamps(){
 stage('checkoutocode')
 {
 git branch: 'development', credentialsId: 'bc8c0969-6bab-43f9-990d-9e4dd376ad45', 
