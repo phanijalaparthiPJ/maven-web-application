@@ -15,8 +15,8 @@ echo "JOB Name ${env.JOB_NAME}"
       buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], 
       pipelineTriggers([
       //cron('* * * * * '), 
-      //githubPush(), 
-      pollSCM('* * * * *')
+      githubPush(), 
+      //pollSCM('* * * * *')
       ])
       ])
   timestamps(){
