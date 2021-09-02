@@ -27,9 +27,9 @@ url: 'https://github.com/phanijalaparthiPJ/maven-web-application.git'
  }
 stage('Build') 	
 {
-/*sh "${mavenHome}/bin/mvn clean package"
+sh "${mavenHome}/bin/mvn clean package"
 }
-stage('SonarQubeReport')
+/*stage('SonarQubeReport')
 {
 sh "${mavenHome}/bin/mvn clean sonar:sonar"
 }
@@ -54,5 +54,6 @@ phanijalaparthi,
 9652559975.
 ''', subject: 'Build over..!!', to: 'phanichowdary1912@gmail.com'
 }	
-}*/
+}
+*/
 }
