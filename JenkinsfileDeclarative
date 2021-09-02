@@ -1,9 +1,10 @@
 pipeline{
-agent any
 /*
-agent
-label "node name"
+agent any
 */
+agent
+label "flipcart-dev"
+
 tools{
 maven "maven3.8.2"
 }
@@ -31,6 +32,7 @@ steps{
 sh "mvn clean package"
 }
 }
+*/
 stage('ExecuteSonarQubeReport'){
     steps{
         sh "mvn clean sonar:sonar"
@@ -49,7 +51,7 @@ stage('DeployApplicationintoTomcat'){
 }
     }
 }
-}//stage Closing
+}//stage Closing */
 post{
     always{
     emailext body: '''Build Finished...!!
