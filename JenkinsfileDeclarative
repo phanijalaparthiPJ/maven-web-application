@@ -52,7 +52,7 @@ stage('DeployApplicationintoTomcat'){
     }
 }
 }
-
+*/
 post{
     always{
     emailext body: '''Build Finished...!!
@@ -80,6 +80,5 @@ post{
 		9652559975''', subject: 'Build success..!!', to: 'phanichowdary1912@gmail.com'
     }
 }
-*/
 }
 }
