@@ -51,7 +51,8 @@ stage('DeployApplicationintoTomcat'){
 }
     }
 }
-}//stage Closing */
+}//stage Closing 
+*/
 post{
     always{
     emailext body: '''Build Finished...!!
