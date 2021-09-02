@@ -3,7 +3,7 @@ pipeline{
 agent any
 */
 agent{
-label 'flipcart-dev'
+label 'nodes'
 }
 tools{
 maven "maven3.8.2"
@@ -46,13 +46,13 @@ stage('UploadArtifactreportinNexus'){
     
 stage('DeployApplicationintoTomcat'){
     steps{
-            sshagent(credentials: ['fd7391ca-785d-4b44-aaef-004929bb9e66'], ignoreMissing: true) {
+            sshagent(credentials: ['fd7391ca-785d-4b44-aaef-004929bb9e66'], ignoreMissing: true) 
     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.233.152.108:/opt/apache-tomcat-9.0.52/webapps/"
-}
+
     }
 }
-}//stage Closing 
-*/
+}
+
 post{
     always{
     emailext body: '''Build Finished...!!
@@ -80,6 +80,6 @@ post{
 		9652559975''', subject: 'Build success..!!', to: 'phanichowdary1912@gmail.com'
     }
 }
+*/
 }
-//}
 }
