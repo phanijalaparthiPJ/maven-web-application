@@ -21,8 +21,7 @@ options{
       githubPush()
       }
 stages{
-stage('CheckOutCode')
-{
+stage('CheckOutCode'){
 steps{
 git branch: 'development', credentialsId: 'bc8c0969-6bab-43f9-990d-9e4dd376ad45', url: 'https://github.com/phanijalaparthiPJ/maven-web-application.git'
 }
@@ -51,8 +50,9 @@ stage('DeployApplicationintoTomcat'){
 
     }
 }
-}
 */
+}
+
 post{
     always{
     emailext body: '''Build Finished...!!
