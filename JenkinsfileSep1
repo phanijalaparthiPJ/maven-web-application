@@ -10,7 +10,7 @@ echo "Jenkins Home ${env.JENKINS_HOME}"
 echo "Jenkins URL ${env.JENKINS_URL}"
 echo "JOB Name ${env.JOB_NAME}"
 
-
+/*
  properties([
       buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], 
       pipelineTriggers([
@@ -19,7 +19,8 @@ echo "JOB Name ${env.JOB_NAME}"
       //pollSCM('* * * * *')
       ])
       ])
-  timestamps(){
+  timestamps(){*/
+  
 stage('checkoutocode')
 {
 git branch: 'development', credentialsId: 'bc8c0969-6bab-43f9-990d-9e4dd376ad45', 
@@ -29,7 +30,8 @@ stage('Build')
 {
 sh "${mavenHome}/bin/mvn clean package"
 }
-/*stage('SonarQubeReport')
+/*
+stage('SonarQubeReport')
 {
 sh "${mavenHome}/bin/mvn clean sonar:sonar"
 }
@@ -55,4 +57,6 @@ phanijalaparthi,
 ''', subject: 'Build over..!!', to: 'phanichowdary1912@gmail.com'
 }	
 }
+*/
+
 }
