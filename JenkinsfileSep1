@@ -10,7 +10,7 @@ echo "Jenkins Home ${env.JENKINS_HOME}"
 echo "Jenkins URL ${env.JENKINS_URL}"
 echo "JOB Name ${env.JOB_NAME}"
 
-/*
+
  properties([
       buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], 
       pipelineTriggers([
@@ -19,7 +19,7 @@ echo "JOB Name ${env.JOB_NAME}"
       //pollSCM('* * * * *')
       ])
       ])
-  timestamps(){*/
+  timestamps(){
   
 stage('checkoutocode')
 {
@@ -56,7 +56,7 @@ phanijalaparthi,
 9652559975.
 ''', subject: 'Build over..!!', to: 'phanichowdary1912@gmail.com'
 }	
-}
 */
 
+}
 }
